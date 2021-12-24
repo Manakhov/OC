@@ -8,8 +8,54 @@
 \usepackage[left=2.00cm, right=2.00cm, top=2.00cm, bottom=2.00cm]{geometry}
 \usepackage[russian]{babel}
 
+\usepackage{setspace}
+\usepackage{fancyhdr}
+
 \begin{document}
-
-\include{title_page}
-
+	\onehalfspacing
+	\include{title_page}
+	\setcounter{page}{2}
+	
+	\section*{Задание}
+	
+	\begin{enumerate}
+		\item Рассчитать коэффициенты оптимального регулятора для линейного объекта:
+		$$\dot{x}=Ax+bu, x(0)$$
+		Структура регулятора $u=-Kx$. Расчет произвести на основе уравнения Риккати:
+		$$A^TP+PA+Q-Pbr^{-1}b^TP=0$$
+		$$K=r^{-1}b^TP$$
+		и критерия качества вида:
+		$$J=\int_{0}^{\infty}x^T(\tau)Qx(\tau)+ru^2(\tau)d\tau$$
+		\item Произвести моделирование замкнутой системы при начальных условиях $x(0)=[1,0]^T$. Построить графики моделирования $x_1,x_2,u$ и $J$. Рассчитать установившееся значение $J$;
+		\item Незначительно отклонить расчетные значения $K$ так, чтобы система сохранила устойчивость, и повторить п.~2 при том же времени моделирования. Сравнить с результатами п.~2 и сделать выводы;
+		\item Провести моделирование для трех разных значений параметра $r$ и трех разных матриц $Q$ при условиях, что $r>0$, $Q=kQ^*$, $k$ -- положительный коэффициент, матрица $Q^*$ равна исходной матрице $Q$ в соответствии с вариантом задания. По результатам экспериментов построить графики моделирования $x_1,x_2,u$ и $J$.
+	\end{enumerate}
+	\begin{table}[h]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Вариант & Матрица $A$ & Матрица $b$ & Матрица $Q$ & Параметр $r$ \\\hline
+			9 & 
+			$\left[
+			\begin{matrix}
+				0 & 1 \\
+				0 & 0 
+			\end{matrix}
+			\right]$
+			& 
+			$\left[
+			\begin{matrix}
+				0 \\ 5
+			\end{matrix}
+			\right]$
+			& 
+			$\left[
+			\begin{matrix}
+				2 & 0 \\
+				0 & 3 
+			\end{matrix}
+			\right]$
+			& 4 \\\hline
+		\end{tabular}
+	\end{table}
 \end{document}
