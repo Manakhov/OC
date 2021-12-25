@@ -14,7 +14,11 @@
 \graphicspath{{img/}}
 
 \RequirePackage{caption}
-\captionsetup[figure]{name=Рисунок,labelsep=endash}
+\captionsetup[figure]{justification=centering,name=Рисунок,labelsep=endash}
+
+\usepackage{indentfirst}
+
+\usepackage{float}
 
 \begin{document}
 	\onehalfspacing
@@ -30,7 +34,7 @@
 		$$A^TP+PA+Q-Pbr^{-1}b^TP=0$$
 		$$K=r^{-1}b^TP$$
 		и критерия качества вида:
-		$$J=\int_{0}^{\infty}x^T(\tau)Qx(\tau)+ru^2(\tau)d\tau$$
+		$$J=\int\limits_{0}^{\infty}x^T(\tau)Qx(\tau)+ru^2(\tau)d\tau$$
 		\item Произвести моделирование замкнутой системы при начальных условиях $x(0)=[1,0]^T$. Построить графики моделирования $x_1,x_2,u$ и $J$. Рассчитать установившееся значение $J$;
 		\item Незначительно отклонить расчетные значения $K$ так, чтобы система сохранила устойчивость, и повторить п.~2 при том же времени моделирования. Сравнить с результатами п.~2 и сделать выводы;
 		\item Провести моделирование для трех разных значений параметра $r$ и трех разных матриц $Q$ при условиях, что $r>0$, $Q=kQ^*$, $k$ -- положительный коэффициент, матрица $Q^*$ равна исходной матрице $Q$ в соответствии с вариантом задания. По результатам экспериментов построить графики моделирования $x_1,x_2,u$ и $J$.
@@ -68,9 +72,102 @@
 	
 	\section*{Описание работы}
 	
-	\begin{figure}[h] \label{fig:system}
+	Полученная при помощи пакета \textit{MATLAB~Simulink} система представлена на рисунках \ref{fig:system}--\ref{fig:MATLAB-Function}.
+	
+	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.6\textwidth]{system}
-		\caption{Система}
+		\caption{Замкнутая система}
+		\label{fig:system}
 	\end{figure}
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics{properties}
+		\caption{Параметры системы}
+		\label{fig:properties}
+	\end{figure}
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics{MATLAB-Function}
+		\caption{Блок MATLAB-Function}
+		\label{fig:MATLAB-Function}
+	\end{figure}
+
+	Произведем моделирование системы при начальных условиях $x(0)=[1,0]^T$. Полученные графики представлены на рисунках \ref{fig:x-2}--\ref{fig:J-2}.
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.6\textwidth]{x-2}
+		\caption{Вектор состояния системы $x$ при $x(0)=[1,0]^T$}
+		\label{fig:x-2}
+	\end{figure}
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.6\textwidth]{u-2}
+		\caption{Управляющий сигнал $u$ при $x(0)=[1,0]^T$}
+		\label{fig:u-2}
+	\end{figure}
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{J-2}
+		\caption{Критерий качества $J$ при $x(0)=[1,0]^T$}
+		\label{fig:J-2}
+	\end{figure}
+
+	Установившееся значение критерия качества $J=2,8739$.
+	
+	Теперь незначительно отклоним расчетное значение $K$ в положительную сторону $K+1$. Полученные графики представлены на рисунках \ref{fig:x-3-plus}--\ref{fig:J-3-plus}.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.6\textwidth]{x-3-plus}
+		\caption{Вектор состояния системы $x$ при отклонении $K+1$}
+		\label{fig:x-3-plus}
+	\end{figure}
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.6\textwidth]{u-3-plus}
+		\caption{Управляющий сигнал $u$ при отклонении $K+1$}
+		\label{fig:u-3-plus}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{J-3-plus}
+		\caption{Критерий качества $J$ при отклонении $K+1$}
+		\label{fig:J-3-plus}
+	\end{figure}
+	
+	Время переходного процесса практически не изменилось, но увеличились предельные значения управляющего сигнала. Также увеличилось установившееся значение критерия качества $J$.
+	
+	При отрицательном отклонении $K-1$ система расходится, поэтому промоделируем систему при $K-0,5$. Полученные графики представлены на рисунках \ref{fig:x-3-minus}--\ref{fig:J-3-minus}.
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.6\textwidth]{x-3-minus}
+		\caption{Вектор состояния системы $x$ при отклонении $K-0,5$}
+		\label{fig:x-3-minus}
+	\end{figure}
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.6\textwidth]{u-3-minus}
+		\caption{Управляющий сигнал $u$ при отклонении $K-0,5$}
+		\label{fig:u-3-minus}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{J-3-minus}
+		\caption{Критерий качества $J$ при отклонении $K-0,5$}
+		\label{fig:J-3-minus}
+	\end{figure}
+	
+	Время переходного процесса и установившееся значение критерия качества $J$ увеличились.
+	
 \end{document}
