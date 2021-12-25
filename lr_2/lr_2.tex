@@ -11,6 +11,11 @@
 \usepackage{setspace}
 \usepackage{fancyhdr}
 
+\graphicspath{{img/}}
+
+\RequirePackage{caption}
+\captionsetup[figure]{name=Рисунок,labelsep=endash}
+
 \begin{document}
 	\onehalfspacing
 	\include{title_page}
@@ -58,4 +63,14 @@
 			& 4 \\\hline
 		\end{tabular}
 	\end{table}
+	
+	\newpage
+	
+	\section*{Описание работы}
+	
+	\begin{figure}[h] \label{fig:system}
+		\centering
+		\includegraphics[width=0.6\textwidth]{system}
+		\caption{Система}
+	\end{figure}
 \end{document}
