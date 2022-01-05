@@ -1,0 +1,43 @@
+\documentclass[14pt, a4paper]{extarticle}
+
+\input{../preamble_main}
+
+\begin{document}
+	\onehalfspacing
+	\include{title_page}
+	\setcounter{page}{2}
+	
+	\section*{Задание}
+	
+	\begin{enumerate}
+		\item Построить оптимальный в смысле заданного критерия регулятор и промоделировать его работу на заданном интервале времени;
+		\item Построить графики управления, переменных состояния и критерия;
+		\item Рассчитать критерий при отклонениях параметров регулятора от оптимальных значений.
+	\end{enumerate}
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|c|c|c|p{0.25\textwidth}|}
+			\hline
+			Вариант & Объект & Критерий & Начальные условия и ограничения \\\hline
+			9 & 
+			$\begin{cases}
+				\dot{x_1} = x_2,\\
+				\dot{x_2} = -x_1 - 2x_2 + u
+			\end{cases}$
+			& 
+			$J = \int\limits_0^1u^2(\tau)d\tau$
+			& 
+			$\begin{matrix}
+				x_1(0)=x_2(0)=0,\\
+				x_1(1)=100,\\
+				x_2(1)=0
+			\end{matrix}$
+			\\\hline
+		\end{tabular}
+	\end{table}
+	
+	\newpage
+	
+	\section*{Описание работы}
+	
+\end{document}
