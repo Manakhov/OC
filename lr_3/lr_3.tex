@@ -72,7 +72,84 @@
 	
 	\section*{Описание работы}
 	
+	Полученная при помощи пакета \textit{MATLAB~Simulink} система представлена на рисунках \ref{fig:system}, \ref{fig:properties}.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{system}
+		\caption{Замкнутая система}
+		\label{fig:system}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics{properties}
+		\caption{Параметры системы}
+		\label{fig:properties}
+	\end{figure}
+
+	Произведем моделирование системы при начальных условиях $x(0)=[1,0]^T$ для $u = sint$. Полученные графики представлены на рисунке \ref{fig:e-2}.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{e-2}
+		\caption{Вектор $e_\text{н}$ при $x(0)=[1,0]^T$}
+		\label{fig:e-2}
+	\end{figure}
+	
+	Теперь незначительно отклоним расчетное значение $L$ в положительную сторону $L+1$. Полученные графики представлены на рисунке \ref{fig:e-3-plus}.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{e-3-plus}
+		\caption{Вектор $e_\text{н}$ при $L+1$}
+		\label{fig:e-3-plus}
+	\end{figure}
+	
+	При отрицательном отклонении $L-1$ наблюдатель расходится, поэтому промоделируем систему при $L-0,5$. Полученные графики представлены на рисунке \ref{fig:e-3-minus}.
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{e-3-minus}
+		\caption{Вектор $e_\text{н}$ при $L-0,5$}
+		\label{fig:e-3-minus}
+	\end{figure}
+	
+	Проведем моделирование для двух разных матриц $W = kW$. Полученные графики при $k=0,5$, $k=2$ представлены на рисунках \ref{fig:e-4-W05},\ref{fig:e-4-W2}.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{e-4-W05}
+		\caption{Вектор $e_\text{н}$ при $k=0,5$}
+		\label{fig:e-4-W05}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{e-4-W2}
+		\caption{Вектор $e_\text{н}$ при $k=2$}
+		\label{fig:e-4-W2}
+	\end{figure}
+	
+	Также проведем моделирование для двух разных значений параметра $V$. Полученные графики при $V=2$, $V=6$ представлены на рисунках \ref{fig:e-5-V2}, \ref{fig:e-5-V6}.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{e-5-V2}
+		\caption{Вектор $e_\text{н}$ при $V=2$}
+		\label{fig:e-5-V2}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{e-5-V6}
+		\caption{Вектор $e_\text{н}$ при $V=6$}
+		\label{fig:e-5-V6}
+	\end{figure}
+	
+	\newpage
 	
 	\section*{Вывод}
 	
+	Полученные графики моделирования системы подтверждают сложность работы с шумами. В данной работе критерий оптимальности представлен в виде математического ожидания, которое при моделировании невозможно вычислить в реальном времени, из-за чего критерий оптимальности не минимизировался.
 \end{document}
