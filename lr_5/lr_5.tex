@@ -1,0 +1,60 @@
+\documentclass[14pt, a4paper]{extarticle}
+
+\input{../preamble_main}
+
+\begin{document}
+	\onehalfspacing
+	\include{title_page}
+	\setcounter{page}{2}
+	
+	\section*{Задание}
+	
+	\begin{enumerate}
+		\item Дан линейный объект управления:
+		$$\dot{x}=Ax+bu, x(0)$$
+		и критерий качества:
+		$$J = \int\limits_0^\infty x^T(\tau)Qx(\tau) + ru^2(\tau)d\tau$$
+		Построить оптимальный регулятор с помощью метода динамического программирования Беллмана и промоделировать его работу на заданном интервале времени;
+		\item Параметры $A,b,Q,r$ взять из задания~2. Начальные условия выбрать $x(0)=[1, 0]^T$. Построить графики управления $u$, переменных состояния $x_1,x_2$ и критерия $J$;
+		\item Построить критерий при отклонениях параметров регулятора от оптимальных значений.
+	\end{enumerate}
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Вариант & Матрица $A$ & Матрица $b$ & Матрица $Q$ & Параметр $r$ \\\hline
+			9 & 
+			$\left[
+			\begin{matrix}
+				0 & 1 \\
+				0 & 0 
+			\end{matrix}
+			\right]$
+			& 
+			$\left[
+			\begin{matrix}
+				0 \\ 5
+			\end{matrix}
+			\right]$
+			& 
+			$\left[
+			\begin{matrix}
+				2 & 0 \\
+				0 & 3 
+			\end{matrix}
+			\right]$
+			& 4 \\\hline
+		\end{tabular}
+	\end{table}
+	
+	\newpage
+	
+	\section*{Описание работы}
+	
+	
+	
+	\newpage
+	
+	\section*{Вывод}
+	
+\end{document}
