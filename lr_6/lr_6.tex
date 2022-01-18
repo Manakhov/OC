@@ -48,8 +48,47 @@
 	
 	\section*{Описание работы}
 	
+	Полученная при помощи пакета \textit{MATLAB~Simulink} система представлена на рисунках \ref{fig:system}--\ref{fig:properties}.
 	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{system}
+		\caption{Замкнутая система}
+		\label{fig:system}
+	\end{figure}
 	
+	\begin{figure}[H]
+		\centering
+		\includegraphics{properties}
+		\caption{Параметры системы}
+		\label{fig:properties}
+	\end{figure}
+	
+	Полученное экспериментально минимальное значение коэффицента $\gamma=\gamma_{min}=2,34$
+	
+	Промоделируем полученную систему при $x(0)=[1,0]^T$, $f=10sin6t+5cos2t+4cos3t+3cos8t$. Полученные графики представлены на рисунках \ref{fig:x-4},\ref{fig:u-4}.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{x-4}
+		\caption{Вектор состояния системы $x$}
+		\label{fig:x-4}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{u-4}
+		\caption{Управляющий сигнал системы $u$}
+		\label{fig:u-4}
+	\end{figure}
+	
+	$H_\infty$-нормы передаточных функций $C_1(Is-(A+BK))^{-1}B_f$ и $C_2(Is-(A+BK))^{-1}B_f$ при $C_1=\left[\begin{matrix}1 & 0\end{matrix}\right]$ и $C_2=\left[\begin{matrix}0 & 1\end{matrix}\right]$ соответственно равны:
+	$$\begin{matrix}
+		\left|\left|W\right|\right|_{\infty1} = 0,2501; & \left|\left|W\right|\right|_{\infty2} = 0,8334 \\
+	\end{matrix}$$
+	
+	$H_\infty$-норма передаточной функции $(Is-(A+BK))^{-1}B_f$ равна:
+	$$\left|\left|W\right|\right|_\infty=0,8701$$
 	\newpage
 	
 	\section*{Вывод}
