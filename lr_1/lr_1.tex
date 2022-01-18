@@ -37,6 +37,36 @@
 	
 	\section*{Описание работы}
 	
+	Для поиска глобального минимума $J(x,u)$ без ограничений составим градиент:
+	$$gradJ(x,u)=\nabla J(x,u)=\left[\begin{matrix}
+		\frac{\partial J(x,u)}{\partial x} \\
+		\frac{\partial J(x,u)}{\partial u} \\
+	\end{matrix}\right]=\left[\begin{matrix}
+		8x+7u+5 \\
+		10u+7x+6 \\
+	\end{matrix}\right]$$
+	Приравняем каждый элемент градиента к нулю и решим следующую систему уравнений:
+	$$\begin{cases}
+		8x+7u+5=0 \\
+		10u+7x+6=0 \\
+	\end{cases}$$
+	Откуда следует, что $x=-\frac{8}{31}$ и $u=-\frac{13}{31}$, подставим в выражение для критерия качества и получим:
+	$$J_{min}=-\frac{307}{31}$$
+	Для поиска глобального минимума $J(x,u)$ с ограничением в виде равенства $c(x,u)=0$ составим лагранжиан:
+	$$L(x,u,\lambda)=J(x,u) + \lambda c(x,u) = 4x^2+5u^2+7xu+5x+6u-8 + \lambda (x-u^2-8)$$
+	Также найдем градиент и приравняем каждый элемент к нулю:
+	$$\begin{matrix}
+		\begin{cases}
+			\frac{\partial L}{\partial \lambda}=0 \\
+			\frac{\partial L}{\partial x}=0 \\
+			\frac{\partial L}{\partial u}=0 \\
+		\end{cases} &
+		\begin{cases}
+			x-u^2-8 = 0 \\
+			8x+7u+5+\lambda = 0 \\
+			10u+7x+6-2\lambda u = 0
+		\end{cases}
+	\end{matrix}$$
 	
 	
 	\newpage
