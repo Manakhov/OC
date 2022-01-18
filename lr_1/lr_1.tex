@@ -1,0 +1,48 @@
+\documentclass[14pt, a4paper]{extarticle}
+
+\input{../preamble_main}
+
+\begin{document}
+	\onehalfspacing
+	\include{title_page}
+	\setcounter{page}{2}
+	
+	\section*{Задание}
+	
+	Найти минимум критерия качества для статической задачи оптимизации:
+	\begin{enumerate}
+		\item Поиск глобального минимума $J(x,u)$ на основе необходимого и достаточного условия:
+		\begin{enumerate}
+			\item[1.1] Без ограничений;
+			\item[1.2] С ограничением в виде равенства $c(x,u)=0$;
+			\item[1.3] С ограничением в виде неравенства $c(x,u)\le0$; 
+		\end{enumerate}
+		\item Градиентный поиск минимума критерия качества:
+		$$J_1(x,u)=J(x,u)$$
+		\begin{enumerate}
+			\item[2.1] Методом Ньютона Рафсона произвести пошаговый расчет экстремума;
+			\item[2.2] Методом наискорейшего спуска для двух различных $\gamma$ (соответствующей колебательной и апериодической сходимости) произвести пошаговый расчет экстремума. 
+		\end{enumerate}
+	\end{enumerate}
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|c|c|c|}
+			\hline
+			Вариант & $J(x,u)$ & $c(x,u)$ \\\hline
+			9 & $J(x,u)=4x^2+5u^2+7xu+5x+6u-8$ & $x-u^2-8$ \\\hline
+		\end{tabular}
+	\end{table}
+	
+	\newpage
+	
+	\section*{Описание работы}
+	
+	
+	
+	\newpage
+	
+	\section*{Вывод}
+	
+
+	
+\end{document}

@@ -1,0 +1,59 @@
+\documentclass[14pt, a4paper]{extarticle}
+
+\input{../preamble_main}
+
+\begin{document}
+	\onehalfspacing
+	\include{title_page}
+	\setcounter{page}{2}
+	
+	\section*{Задание}
+	
+	\begin{enumerate}
+		\item Дан возмущённый линейный объект управления:
+		$$\dot{x}=Ax+Bu+B_ff,x(0)$$
+		Построить $H_\infty$-оптимальный регулятор вида $u=Kx$. Расчет произвести на основе уравнения Риккати:
+		$$A^TP+PA+Q-PBB^TP+\gamma^{-2}PB_fB_f^TP=0$$
+		$$K=-B^TP$$
+		\item Экспериментально определить минимальное значение коэффициента $\gamma=\gamma_{min}$, при котором существует положительно полуопределённая матрица $P$ в качестве решения уравнения Риккати;
+		\item Начальные условия выбрать $x(0)=[1,0]^T$, возмущение $f=10sin6t+5cos2t+4cos3t+3cos8t$;
+		\item Для $\gamma_{min}$ построить графики управления $u$ и переменных состояния $x_1$, $x_2$.
+		\item Определить $H_\infty$-нормы передаточных функций $C_1(Is-(A+BK))^{-1}B_f$ и $C_2(Is-(A+BK))^{-1}B_f$, где $C_1=\left[\begin{matrix}1 & 0\end{matrix}\right]$ и $C_2=\left[\begin{matrix}0 & 1\end{matrix}\right]$;
+		\item Определить $H_\infty$-норму передаточной функции $(Is-(A+BK))^{-1}B_f$.
+	\end{enumerate}
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Вариант & $A$ & $B$ & $B_f$ & $Q$ \\\hline
+			9 & 
+			$\left[\begin{matrix}
+				2 & 3 \\
+				6 & 0 \\
+			\end{matrix}\right]$ & 
+			$\left[\begin{matrix}
+				0 \\ 5 \\
+			\end{matrix}\right]$ &
+			$\left[\begin{matrix}
+				2 \\ 5 \\
+			\end{matrix}\right]$ & 
+			$\left[\begin{matrix}
+				5 & 0 \\
+				0 & 5 \\
+			\end{matrix}\right]$ \\\hline
+		\end{tabular}
+	\end{table}
+	
+	\newpage
+	
+	\section*{Описание работы}
+	
+	
+	
+	\newpage
+	
+	\section*{Вывод}
+	
+
+	
+\end{document}
