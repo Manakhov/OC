@@ -1,12 +1,13 @@
 \documentclass[14pt, a4paper]{extarticle}
 
 \input{../preamble_main}
+\input{preamble_local}
 
 \begin{document}
 	\onehalfspacing
 	\include{title_page}
 	\setcounter{page}{2}
-	
+
 	\section*{Задание}
 	
 	Найти минимум критерия качества для статической задачи оптимизации:
@@ -122,18 +123,38 @@
 	Осуществим градиентный поиск минимума критерия качества методом наискорейшего спуска по следующей формуле:
 	$$\bar{X}^{(n+1)}=\bar{X}^{(n)}-\gamma\nabla J(\bar{X}^{(n)})$$
 	
-	С фиксированным коэффициентом $\gamma=0,1$ следующий минимум был найден за 31~итерацию:
+	Будем использовать скрипт, представленный ниже:
+	\begin{small}
+		\lstinputlisting[language=Matlab]{m/lab1_2a.m}
+	\end{small}
+	
+	С коэффициентом $\gamma=0,1$ минимум найден за 31~итерацию:
 	$$\begin{matrix}
 		x(32)=-0,2518; & u(32)=-0,4248; & J(32)=J_{min}=-9,9032
 	\end{matrix}$$
 	
-	Для динамического изменения коэффициента $\gamma$ необходимо на каждом шаге вычислять следующее уравнение:
-	$$\frac{\partial J(\bar{X}^{(n)}-\gamma\nabla J(\bar{X}^{(n)}))}{\partial \gamma}=0$$
+	На рисунке \ref{fig:gamma01} представлен результат работы алгоритма, соответствующий колебательной сходимости.
 	
-	Таким образом, минимум найден за 7 итераций:
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{gamma01}
+		\caption{Значения $x,u$ при $\gamma=0,1$}
+		\label{fig:gamma01}
+	\end{figure}
+	
+	С коэффициентом $\gamma=0,066$ минимум найден за 49~итераций:
 	$$\begin{matrix}
-		x(8)=-0,2529; & u(8)=-0,4240; & J(8)=J_{min}=-9,9032
+		x(50)=-0,2520; & u(50)=-0,4247; & J(50)=J_{min}=-9,9032
 	\end{matrix}$$
+
+	На рисунке \ref{fig:gamma0066} представлен результат работы алгоритма, соответствующий апериодической сходимости.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{gamma0066}
+		\caption{Значения $x,u$ при $\gamma=0,066$}
+		\label{fig:gamma0066}
+	\end{figure}
 
 	\newpage
 	
